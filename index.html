@@ -1,11 +1,147 @@
 <!DOCTYPE html>
 
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Lit Starter Kit</title>
-  </head>
-  <body>
-    <a href="/dev/index.html">Component Demo</a>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>&lt;my-element> Demo</title>
+  <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script src="./node_modules/lit/polyfill-support.js"></script>
+  <script type="module" src="y-project.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div id="title">yopox</div>
+  <span>software developer @ JetBrains</span>
+  <span>hobbyist game dev</span>
+</header>
+
+<div class="year">
+  <div class="container">
+    <y-project
+      name="miam"
+      tags="game,ludum dare,rust,bevy"
+      description="miam is a burger game made for the LD51 game jam."
+      links="play;https://yopox.itch.io/miam
+      ;;submission page;https://ldjam.com/events/ludum-dare/51/miam
+      ;;github;https://www.github.com/yopox/LD51"
+    ></y-project>
+
+    <y-project
+      name="Morsay Mad Festival 2022"
+      tags="youtube,audio,ytpmv,ableton"
+      description="Cover of Free Money from the game Pikuniku.
+                One part of the third MMF YTPMV collaboration."
+      links="youtube;"
+    ></y-project>
+
+    <y-project
+      name="deviNUPES"
+      tags="game,libGDX,java"
+      description="Entry for the NUPES game jam."
+      links="play;https://yopox.itch.io/devinupes
+      ;;github;https://www.github.com/yopox/deviNUPES"
+    ></y-project>
+
+    <y-project
+      name="2022etmoi.fr"
+      tags="web,typescript,democracy"
+      description="Quiz for the French presidential election."
+      links="website;https://www.2022etmoi.fr
+      ;;github;https://www.github.com/2022etmoi/2022etmoi"
+    ></y-project>
+
+    <div class="background"></div>
+  </div>
+  <div class="strong abs-left">2022</div>
+</div>
+
+<div class="year">
+  <div class="container">
+    <y-project
+      name="Unbalanced Brawl"
+      tags="game,ludum dare,rust,bevy"
+      description="Unbalanced Brawl is an autochess made for the LD49 game jam."
+      links="play;https://yopox.itch.io/unbalanced-brawl
+      ;;submission page;https://ldjam.com/events/ludum-dare/49/unbalanced-brawl
+      ;;github;https://www.github.com/yopox/LD49"
+    ></y-project>
+
+    <div class="background"></div>
+  </div>
+  <div class="strong abs-right">2021</div>
+</div>
+
+<div class="year">
+  <div class="container">
+    <y-project
+      name="149 propositions"
+      tags="web,javascript,democracy"
+      description="Website to perform citizen control of Emmanuel Macron climate engagements."
+    ></y-project>
+
+    <y-project
+      name="Infinite Racer"
+      tags="game,ludum dare,libGDX,kotlin"
+      description="Infinite Racer is a racing game made for the LD47 game jam."
+      links="play (broken);
+      ;;submission page;https://ldjam.com/events/ludum-dare/47/infinite-racer
+      ;;github;https://www.github.com/yopox/LD47"
+    ></y-project>
+
+    <div class="background"></div>
+  </div>
+  <div class="strong abs-left">2020</div>
+</div>
+
+<div class="year">
+  <div class="container">
+    <div class="background"></div>
+  </div>
+  <div class="strong abs-right">2019</div>
+</div>
+
+<div class="year">
+  <div class="container">
+    <div class="background"></div>
+  </div>
+  <div class="strong abs-left">2018</div>
+</div>
+
+<div class="year">
+  <div class="container">
+    <div class="background"></div>
+  </div>
+  <div class="strong abs-right">2017</div>
+</div>
+
+<div class="year">
+  <div class="container">
+    <div class="background"></div>
+  </div>
+  <div class="strong abs-left">2016</div>
+</div>
+</body>
+<script>
+  const accent1 = [199, 231, 207];
+  const accent2 = [237, 158, 158];
+
+  function runOnScroll() {
+    let offset =
+      window.scrollY / (document.body.offsetHeight - window.innerHeight);
+    const color = [
+      accent1[0] + offset * (accent2[0] - accent1[0]),
+      accent1[1] + offset * (accent2[1] - accent1[1]),
+      accent1[2] + offset * (accent2[2] - accent1[2]),
+    ];
+    document
+      .querySelector(':root')
+      .style.setProperty(
+      '--accent',
+      `rgb(${color[0]},${color[1]},${color[2]})`
+    );
+  }
+
+  window.addEventListener('scroll', () => runOnScroll(), {passive: true});
+</script>
 </html>

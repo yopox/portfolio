@@ -1,0 +1,127 @@
+:root {
+    --accent: #c7e7cf;
+}
+
+@font-face {
+    font-family: JetBrains Sans;
+    src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Light.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Light.woff) format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: JetBrains Sans;
+    src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Regular.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Regular.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: JetBrains Sans;
+    src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-SemiBold.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-SemiBold.woff) format("woff");
+    font-weight: 600;
+    font-style: normal;
+}
+@supports (font-variation-settings: normal) {
+    @font-face {
+        font-family: JetBrains Sans;
+        src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans.woff2) format("woff2 supports variations"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans.woff2) format("woff2-variations"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans.woff) format("woff-variations");
+        font-weight: 100 900;
+        font-style: normal;
+    }
+}
+
+body {
+    margin: 0;
+    border: 0;
+    padding: 32px 0 96px 0;
+    background-color: #23252a;
+    font-family: "JetBrains Sans", serif;
+    color: var(--accent);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 32px 0 64px 0;
+}
+
+.part {
+    height: 100vh;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#title {
+    font-size: 8em;
+    font-weight: 666;
+}
+
+.strong {
+    font-size: 12em;
+    font-weight: 800;
+}
+
+.abs-left {
+    position: absolute;
+    z-index: -1;
+    top: -120px;
+    left: 80px;
+}
+
+.abs-right {
+    position: absolute;
+    z-index: -1;
+    top: -120px;
+    right: 80px;
+}
+
+#presentation {
+    display: flex;
+    flex-flow: column;
+    align-items: end;
+}
+#presentation a {
+    color: var(--accent);
+}
+#presentation span {
+    font-size: 32px;
+}
+
+.year {
+    position: relative;
+    width: 100vw;
+    margin: 128px 0;
+}
+.year:hover .background {
+    opacity: 1;
+}
+
+.container {
+    width: 75%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    margin: auto;
+    color: #23252a;
+    padding: 64px 0;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: var(--accent);
+    opacity: 0.4;
+    z-index: -1;
+    transition: opacity ease-in 0.2s;
+    border-radius: 32px;
+}
