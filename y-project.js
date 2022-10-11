@@ -38,10 +38,9 @@ export class YProject extends LitElement {
       #promo {
         width: 270px;
         height: 180px;
-        background-color: grey;
         object-fit: cover;
-        opacity: 0.5;
-        transition: opacity ease-in 0.5s;
+        opacity: 0.6;
+        transition: opacity ease-in 0.2s;
         flex-shrink: 0;
         border-radius: 8px;
       }
@@ -64,7 +63,7 @@ export class YProject extends LitElement {
       .arrow {
         width: 16px;
         height: 16px;
-        margin: 0px -3px -3px 0;
+        margin-bottom: -3px;
       }
     `;
   }
@@ -105,8 +104,7 @@ export class YProject extends LitElement {
               .filter((s) => s !== '')
               .map((s) => {
                 let link = s.split(';');
-                return html`<a href="${link[1]}"><!--suppress HtmlRequiredAltAttribute -->
-                  <img class="arrow" src="assets/north_east_FILL0_wght400_GRAD0_opsz48.svg"> ${link[0]}</a>`
+                return html`<a href="${link[1]}"><img class="arrow" src="assets/north_east_FILL0_wght400_GRAD0_opsz48.svg"> ${link[0]}</a>`
               })}
           </div>
         </div>
