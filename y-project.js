@@ -39,8 +39,15 @@ export class YProject extends LitElement {
         width: 270px;
         height: 180px;
         background-color: grey;
-        border-radius: 16px;
+        object-fit: cover;
+        opacity: 0.5;
+        transition: opacity ease-in 0.5s;
         flex-shrink: 0;
+        border-radius: 8px;
+      }
+      
+      #container:hover #promo {
+        opacity: 1;
       }
 
       #description {
@@ -83,7 +90,7 @@ export class YProject extends LitElement {
     return html`
       <div id="container">
         <!--suppress HtmlRequiredAltAttribute -->
-        <img id="promo">
+        <img id="promo" src="assets/${this.name.toLowerCase().replaceAll(" ", "-")}.png">
         <div id="content">
           <div id="title">${this.name}</div>
           <div id="chips">
@@ -99,7 +106,7 @@ export class YProject extends LitElement {
               .map((s) => {
                 let link = s.split(';');
                 return html`<a href="${link[1]}"><!--suppress HtmlRequiredAltAttribute -->
-                  <img class="arrow" src="north_east_FILL0_wght400_GRAD0_opsz48.svg"> ${link[0]}</a>`
+                  <img class="arrow" src="assets/north_east_FILL0_wght400_GRAD0_opsz48.svg"> ${link[0]}</a>`
               })}
           </div>
         </div>
