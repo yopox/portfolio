@@ -89,7 +89,7 @@ export class YProject extends LitElement {
     return html`
       <div id="container">
         <!--suppress HtmlRequiredAltAttribute -->
-        <img id="promo" src="portfolio/assets/${this.name.toLowerCase().replaceAll(" ", "-")}.png">
+        <img id="promo" src="assets/${this.name.toLowerCase().replaceAll(" ", "-")}.png">
         <div id="content">
           <div id="title">${this.name}</div>
           <div id="chips">
@@ -104,7 +104,7 @@ export class YProject extends LitElement {
               .filter((s) => s !== '')
               .map((s) => {
                 let link = s.split(';');
-                return html`<a href="${link[1]}"><img class="arrow" src="portfolio/assets/north_east_FILL0_wght400_GRAD0_opsz48.svg"> ${link[0]}</a>`
+                return html`<a href="${link[1]}"><img class="arrow" src="assets/north_east_FILL0_wght400_GRAD0_opsz48.svg"> ${link[0]}</a>`
               })}
           </div>
         </div>
