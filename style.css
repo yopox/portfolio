@@ -1,5 +1,9 @@
 :root {
     --accent: #c7e7cf;
+    --font_year: 160px;
+    --font_title: 128px;
+    --font_projects: 48px;
+    --font_body: 16px;
 }
 
 @font-face {
@@ -58,21 +62,21 @@ header {
 }
 
 #title {
-    font-size: 8em;
+    font-size: var(--font_title);
     font-weight: 666;
 }
 
 .strong {
-    font-size: 12em;
+    font-size: var(--font_year);
     font-weight: 800;
 }
 
 .abs {
     position: absolute;
     color: var(--accent);
-    rotate: 3deg;
+    rotate: 2deg;
     z-index: -1;
-    top: -120px;
+    top: -100px;
     right: 80px;
 }
 
@@ -112,4 +116,58 @@ header {
     opacity: 0.4;
     z-index: -1;
     transition: opacity ease-in 0.2s;
+}
+
+@media screen and (max-width: 1280px) {
+    :root {
+        --font_year: 144px;
+        --font_title: 96px;
+        --font_projects: 38px;
+        --font_body: 14px;
+    }
+    .abs {
+        top: -90px;
+        right: 70px;
+    }
+    .year {
+        margin: 96px auto;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    :root {
+        --font_year: 128px;
+        --font_title: 90px;
+        --font_projects: 32px;
+        --font_body: 14px;
+    }
+    header {
+        margin: 16px 0;
+    }
+    .abs {
+        top: -80px;
+        right: 60px;
+    }
+    .year {
+        width: 100vw;
+        margin: 84px auto;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    :root {
+        --font_year: 96px;
+        --font_title: 64px;
+    }
+    header {
+        margin: 0;
+    }
+    .abs {
+        top: -60px;
+        right: 50px;
+    }
+    .year {
+        width: 100vw;
+        margin: 84px auto;
+    }
 }
