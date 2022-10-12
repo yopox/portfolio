@@ -1,4 +1,4 @@
-import {LitElement, html, css} from '/portfolio/lit.js';
+import {LitElement, html, css} from 'lit';
 
 export class YProject extends LitElement {
   static get styles() {
