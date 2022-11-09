@@ -53,6 +53,17 @@ header {
     margin: 32px 0 64px 0;
 }
 
+header div {
+    margin-top: 6px;
+}
+
+header a {
+    display: block;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--accent);
+}
+
 .part {
     height: 100vh;
     display: flex;
