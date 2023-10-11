@@ -67,7 +67,9 @@ fn main() {
 
     match rendered {
         Ok(r) => {
-            fs::write("index.html", r).expect("Couldn't write index.html");
+            match fs::remove_dir_all("output") { _ => () }
+            copy_dir::copy_dir("static", "output").expect("Couldn't copy static/");
+            fs::write("output/index.html", r).expect("Couldn't write index.html");
         },
         Err(e) => println!("{}", e),
     }
