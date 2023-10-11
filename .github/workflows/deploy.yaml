@@ -9,14 +9,18 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
+      
       - run: cargo run
 
-      - name: Deploy to branch
-        uses: ad-m/github-push-action@master
+      - uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
