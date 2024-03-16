@@ -1,7 +1,32 @@
 [
     {
+        "year": "2024",
+        "projects": [
+            {
+                "name": "The Forgotten Jade",
+                "tags": ["game jam", "7drl", "godot"],
+                "description": "The Forgotten Jade is a hack and slash roguelike made for the 7DRL game jam. Theme: Roguelike.",
+                "links": [
+                    { "title": "play", "url": "https://yopox.itch.io/the-forgotten-jade" },
+                    { "title": "submission page", "url": "https://itch.io/jam/7drl-challenge-2024/rate/2574647" },
+                    { "title": "github", "url": "https://github.com/yopox/7drl" }
+                ]
+            }
+        ]
+    },
+    {
         "year": "2023",
         "projects": [
+            {
+                "name": "Toteninsel",
+                "tags": ["game jam", "github game off", "rust", "bevy"],
+                "description": "Toteninsel is a platform/action game made for the GitHub Game Off game jam. Theme: Scale.",
+                "links": [
+                    { "title": "play", "url": "https://yopox.itch.io/toteninsel" },
+                    { "title": "submission page", "url": "https://itch.io/jam/game-off-2023/rate/2397161" },
+                    { "title": "github", "url": "https://github.com/yopox/game-off-2023" }
+                ]
+            },
             {
                 "name": "space station No. 34",
                 "tags": ["game jam", "gbjam", "rust", "bevy"],

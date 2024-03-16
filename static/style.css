@@ -6,30 +6,11 @@
     --font_body: 16px;
 }
 
-@font-face {
-    font-family: JetBrains Sans;
-    src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Light.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Light.woff) format("woff");
-    font-weight: 300;
-    font-style: normal;
-}
-@font-face {
-    font-family: JetBrains Sans;
-    src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Regular.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Regular.woff) format("woff");
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: JetBrains Sans;
-    src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-SemiBold.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-SemiBold.woff) format("woff");
-    font-weight: 600;
-    font-style: normal;
-}
 @supports (font-variation-settings: normal) {
     @font-face {
         font-family: JetBrains Sans;
         src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans.woff2) format("woff2 supports variations"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans.woff2) format("woff2-variations"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans.woff) format("woff-variations");
         font-weight: 100 900;
-        font-style: normal;
     }
 }
 
@@ -64,6 +45,19 @@ header a {
     color: var(--accent);
 }
 
+header svg {
+    width: 32px;
+    height: 32px;
+    padding: 12px;
+    border-radius: 32px;
+    overflow: visible;
+    fill: var(--accent);
+}
+
+header svg:hover {
+    background-color: #444;
+}
+
 .part {
     height: 100vh;
     display: flex;
@@ -72,9 +66,15 @@ header a {
     justify-content: space-evenly;
 }
 
-#title {
-    font-size: var(--font_title);
-    font-weight: 666;
+#yopox {
+    font-size: 196px;
+    font-weight: 640;
+    letter-spacing: -8px;
+}
+
+header .icons {
+    display: flex;
+    flex-flow: row;
 }
 
 .strong {
@@ -91,15 +91,15 @@ header a {
     right: 80px;
 }
 
-#presentation {
+.presentation {
     display: flex;
     flex-flow: column;
     align-items: end;
 }
-#presentation a {
+.presentation a {
     color: var(--accent);
 }
-#presentation span {
+.presentation span {
     font-size: 32px;
 }
 
@@ -191,20 +191,20 @@ header a {
     font-size: var(--font_body);
 }
 
-#content {
+.content {
     display: flex;
     flex-flow: column;
     padding: 0 32px;
 }
 
 
-#title {
+.title {
     font-size: var(--font_projects);
     line-height: var(--font_projects);
     font-weight: 700;
 }
 
-#chips {
+.chips {
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
@@ -218,7 +218,7 @@ header a {
     margin: 8px 8px 0 0;
 }
 
-#promo {
+.promo {
     width: 270px;
     height: 180px;
     object-fit: cover;
@@ -226,13 +226,14 @@ header a {
     transition: opacity ease-in 0.2s;
     flex-shrink: 0;
     border-radius: 8px;
+    image-rendering: crisp-edges;
 }
 
-.project:hover #promo {
+.project:hover .promo {
     opacity: 1;
 }
 
-#description {
+.description {
     line-break: auto;
     box-sizing: border-box;
     padding-bottom: 16px;
@@ -250,19 +251,29 @@ a {
 }
 
 @media screen and (max-width: 920px) {
-    #promo {
+    #yopox {
+        font-size: 166px;
+        letter-spacing: -6px;
+    }
+
+    .promo {
         width: 210px;
         height: 140px;
     }
 }
 
 @media screen and (max-width: 640px) {
+    #yopox {
+        font-size: 120px;
+        letter-spacing: -3px;
+    }
+
     .project {
         padding: 32px;
         flex-flow: column;
     }
 
-    #promo {
+    .promo {
         width: 270px;
         height: 180px;
         margin-bottom: 16px;
